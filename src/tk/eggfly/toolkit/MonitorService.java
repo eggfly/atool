@@ -11,28 +11,28 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import tk.eggfly.toolkit.Utils.Parser;
+import android.app.AlertDialog;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 public class MonitorService extends IntentService {
     public static class ProcInfo implements Comparable<ProcInfo> {
-        int count;
+        int noneActivityLaunchCount;
         String proc;
         List<LaunchInfo> launchInfos = new ArrayList<LaunchInfo>();
 
         @Override
         public int compareTo(ProcInfo another) {
-            return another.count - this.count;
+            return another.noneActivityLaunchCount - this.noneActivityLaunchCount;
         }
 
         @Override
         public String toString() {
-            return proc + ": " + count;
+            return proc + ": " + noneActivityLaunchCount;
         }
     }
 
@@ -69,12 +69,15 @@ public class MonitorService extends IntentService {
                 ProcInfo info = sInfo.get(proc);
                 if (info == null) {
                     info = new ProcInfo();
-                    info.count = 0;
+                    info.noneActivityLaunchCount = 0;
                     info.proc = proc;
                     sInfo.put(proc, info);
                 }
-                info.count++;
-                info.launchInfos.add(launchInfo);
+                if (!"activity".equals(type)) {
+                    info.noneActivityLaunchCount++;
+                    info.launchInfos.add(launchInfo);
+                }
+                Log.d(ToolkitApp.TAG, m.group());
             }
         }
     };
@@ -102,6 +105,13 @@ public class MonitorService extends IntentService {
     public static void printStatistics(Context context) {
         List<ProcInfo> infoList = new ArrayList<ProcInfo>(sInfo.values());
         Collections.sort(infoList);
-        Toast.makeText(context, TextUtils.join("\n", infoList), Toast.LENGTH_LONG).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("statistics");
+        CharSequence[] items = new CharSequence[infoList.size()];
+        for (int i = 0; i < infoList.size(); i++) {
+            items[i] = infoList.get(i).toString();
+        }
+        builder.setItems(items, null);
+        builder.show();
     }
 }
