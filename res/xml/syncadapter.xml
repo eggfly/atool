@@ -5,4 +5,4 @@
     android:contentAuthority="toolkit_background"
     android:isAlwaysSyncable="true"
     android:supportsUploading="false"
-    android:userVisible="true" />
+    android:userVisible="false" />

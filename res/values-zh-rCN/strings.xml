@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">atool</string>
+    <string name="action_settings">设置</string>
+    <string name="view_test">TEST</string>
+    <string name="view_statistics">查看ActivityManager进程自启动统计</string>
+    <string name="view_app_info">应用信息</string>
+    <string name="view_app_permission">应用权限</string>
+    <string name="view_auto_start">安全中心-自启动管理</string>
+    <string name="view_settings">设置</string>
+    <string name="view_manage_all_applications">ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS</string>
+    <string name="view_manage_applications">ACTION_MANAGE_APPLICATIONS_SETTINGS</string>
+    <string name="view_dev_settings">开发者选项</string>
+    <string name="require_root">安全中心-ROOT管理</string>
+
+</resources>

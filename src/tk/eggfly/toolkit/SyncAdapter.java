@@ -72,13 +72,13 @@ public class SyncAdapter extends AbstractThreadedSyncAdapter {
         Notification.Builder builder = new Notification.Builder(context);
         builder.setSmallIcon(R.drawable.ic_launcher);
         builder.setWhen(0);
-        builder.setContentTitle("张照片");
+        builder.setContentTitle("Toolkit");
         builder.setContentText("马上查看");
         builder.setAutoCancel(true);
         builder.setLights(Color.MAGENTA, 500, 500);
         // long[] pattern = { 500, 500, 500, 500, 500, 500, 500, 500, 500 };
         // builder.setVibrate(pattern);
-        builder.setOngoing(true);
+        // builder.setOngoing(true);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         builder.setSound(alarmSound);
         // Intent incomingShareIntent = new Intent(context, FaceShareActivity.class);

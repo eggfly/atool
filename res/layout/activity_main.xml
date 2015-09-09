@@ -1,16 +1,79 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:orientation="vertical" >
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/view_test_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_test" />
+
+        <Button
+            android:id="@+id/view_statistics_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_statistics" />
+
+        <Button
+            android:id="@+id/view_app_info_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_app_info" />
+
+        <Button
+            android:id="@+id/view_app_permission_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_app_permission" />
+
+        <Button
+            android:id="@+id/view_settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_settings" />
+
+        <Button
+            android:id="@+id/view_manage_all_applications_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_manage_all_applications" />
+
+        <Button
+            android:id="@+id/view_manage_applications_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_manage_applications" />
+
+        <Button
+            android:id="@+id/view_dev_settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_dev_settings" />
+
+        <Button
+            android:id="@+id/view_auto_start_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_auto_start" />
+
+        <Button
+            android:id="@+id/require_root_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/require_root" />
+    </LinearLayout>
+
+</LinearLayout>
