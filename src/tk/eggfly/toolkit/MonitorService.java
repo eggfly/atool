@@ -18,6 +18,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 
 public class MonitorService extends IntentService {
     public static class ProcInfo implements Comparable<ProcInfo> {
@@ -102,7 +104,24 @@ public class MonitorService extends IntentService {
         }
     };
 
-    public static void printStatistics(Context context) {
+    static void printDetails(Context context) {
+        List<ProcInfo> infoList = new ArrayList<ProcInfo>(sInfo.values());
+        Collections.sort(infoList);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("statistics");
+        String[] items = new String[infoList.size()];
+        for (int i = 0; i < infoList.size(); i++) {
+            items[i] = infoList.get(i).toString();
+        }
+        builder.setItems(items, null);
+        ListAdapter adapter = new ArrayAdapter<String>(context,
+                R.layout.text_item, items);
+        builder.setAdapter(adapter, null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    static void printStatistics(Context context) {
         List<ProcInfo> infoList = new ArrayList<ProcInfo>(sInfo.values());
         Collections.sort(infoList);
         AlertDialog.Builder builder = new AlertDialog.Builder(context);

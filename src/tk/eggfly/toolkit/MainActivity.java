@@ -22,16 +22,10 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        // try {
-        // PackageInfo info = getPackageManager().getPackageInfo("com.android.settings",
-        // PackageManager.COMPONENT_ENABLED_STATE_DEFAULT);
-        // } catch (NameNotFoundException e) {
-        // e.printStackTrace();
-        // }
     }
 
     private void initViews() {
-        findViewById(R.id.view_test_button).setOnClickListener(this);
+        findViewById(R.id.view_start_monitor_button).setOnClickListener(this);
         findViewById(R.id.view_statistics_button).setOnClickListener(this);
         findViewById(R.id.view_auto_start_button).setOnClickListener(this);
         findViewById(R.id.view_app_info_button).setOnClickListener(this);
@@ -68,17 +62,11 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.view_test_button:
+            case R.id.view_start_monitor_button:
                 startService(new Intent(this, MonitorService.class));
-                // Utils.runRootCommands("pm disable com.xiaomi.channel");
-                // Utils.runRootCommands("pm list packages -d");
-                // Utils.runRootCommands("pm enable com.xiaomi.channel");
                 break;
             case R.id.view_statistics_button:
-                MonitorService.printStatistics(this);
-                // Utils.runRootCommands("pm disable com.xiaomi.channel");
-                // Utils.runRootCommands("pm list packages -d");
-                // Utils.runRootCommands("pm enable com.xiaomi.channel");
+                MonitorService.printDetails(this);
                 break;
             case R.id.view_app_info_button:
                 AppDetail.showInstalledAppDetails(this, this.getPackageName());

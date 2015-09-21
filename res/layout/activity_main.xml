@@ -16,10 +16,10 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/view_test_button"
+            android:id="@+id/view_start_monitor_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/view_test" />
+            android:text="@string/start_monitor" />
 
         <Button
             android:id="@+id/view_statistics_button"

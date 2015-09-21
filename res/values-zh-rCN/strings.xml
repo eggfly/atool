@@ -3,7 +3,7 @@
 
     <string name="app_name">atool</string>
     <string name="action_settings">设置</string>
-    <string name="view_test">TEST</string>
+    <string name="start_monitor">开始检测</string>
     <string name="view_statistics">查看ActivityManager进程自启动统计</string>
     <string name="view_app_info">应用信息</string>
     <string name="view_app_permission">应用权限</string>
