@@ -3,6 +3,7 @@
 
     <string name="app_name">atool</string>
     <string name="action_settings">Settings</string>
+    <string name="view_sync">Diagnose android sync</string>
     <string name="start_monitor">Start Monitor</string>
     <string name="view_statistics">ActivityManager Statistics</string>
     <string name="view_app_info">View App Info</string>
@@ -12,6 +13,9 @@
     <string name="view_manage_all_applications">View Manage All Applications</string>
     <string name="view_manage_applications">View Manage Applications</string>
     <string name="view_dev_settings">View Dev Settings</string>
+    <string name="view_notification_listener_settings">Notification Listener Settings</string>
     <string name="require_root">Require Root</string>
+    <string name="title_activity_sync_status">SyncStatusActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

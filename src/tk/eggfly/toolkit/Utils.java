@@ -92,7 +92,7 @@ public class Utils {
         }
     }
 
-    public static boolean runRootCommands(String command) {
+    static String runRootCommands(String command) {
         Process rootProcess;
         try {
             rootProcess = Runtime.getRuntime().exec("su");
@@ -112,12 +112,11 @@ public class Utils {
                 errData.append(line + System.getProperty("line.separator"));
             }
             Log.d(ToolkitApp.TAG, data.toString() + "\n" + errData.toString());
-            return true;
+            return data.toString();
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-
-        return false;
     }
 
     static Account findAccountByType(Context context, String accountType) {

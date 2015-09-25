@@ -60,6 +60,11 @@ public class Navigator {
             intent.setClassName("com.android.settings", "com.android.settings.applications.StorageUse");
             context.startActivity(intent);
         }
+
+        public static void showNotificationListenerSettings(Context context) {
+            Intent intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
+            context.startActivity(intent);
+        }
     }
 
     static class AppDetail {

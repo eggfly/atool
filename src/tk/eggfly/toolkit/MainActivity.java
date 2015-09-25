@@ -25,22 +25,10 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void initViews() {
-        findViewById(R.id.view_start_monitor_button).setOnClickListener(this);
-        findViewById(R.id.view_statistics_button).setOnClickListener(this);
-        findViewById(R.id.view_auto_start_button).setOnClickListener(this);
-        findViewById(R.id.view_app_info_button).setOnClickListener(this);
-        findViewById(R.id.view_app_permission_button).setOnClickListener(this);
-        findViewById(R.id.view_settings_button).setOnClickListener(this);
-        findViewById(R.id.view_manage_all_applications_button).setOnClickListener(this);
-        findViewById(R.id.view_manage_applications_button).setOnClickListener(this);
-        findViewById(R.id.view_dev_settings_button).setOnClickListener(this);
-        findViewById(R.id.require_root_button).setOnClickListener(this);
         ViewGroup buttons = (ViewGroup) findViewById(R.id.buttons);
         for (int i = 0; i < buttons.getChildCount(); i++) {
             View view = buttons.getChildAt(i);
-            if (UIUtils.getOnClickListener(view) == null) {
-                view.setEnabled(false);
-            }
+            view.setOnClickListener(this);
         }
     }
 
@@ -62,6 +50,9 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.view_sync:
+                startActivity(new Intent(this, SyncStatusActivity.class));
+                break;
             case R.id.view_start_monitor_button:
                 startService(new Intent(this, MonitorService.class));
                 break;
@@ -85,6 +76,9 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
             case R.id.view_dev_settings_button:
                 AndroidSettings.showDevSettings(this);
+                break;
+            case R.id.view_notification_listener_settings_button:
+                AndroidSettings.showNotificationListenerSettings(this);
                 break;
             case R.id.view_auto_start_button:
                 SecurityCenter.showAutoStartManagementPage(this);

@@ -9,71 +9,88 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-        <Button
-            android:id="@+id/view_start_monitor_button"
+        <LinearLayout
+            android:id="@+id/buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/start_monitor" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/view_statistics_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_statistics" />
+            <Button
+                android:id="@+id/view_sync"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_sync" />
 
-        <Button
-            android:id="@+id/view_app_info_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_app_info" />
+            <Button
+                android:id="@+id/view_start_monitor_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_monitor" />
 
-        <Button
-            android:id="@+id/view_app_permission_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_app_permission" />
+            <Button
+                android:id="@+id/view_statistics_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_statistics" />
 
-        <Button
-            android:id="@+id/view_settings_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_settings" />
+            <Button
+                android:id="@+id/view_app_info_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_app_info" />
 
-        <Button
-            android:id="@+id/view_manage_all_applications_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_manage_all_applications" />
+            <Button
+                android:id="@+id/view_app_permission_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_app_permission" />
 
-        <Button
-            android:id="@+id/view_manage_applications_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_manage_applications" />
+            <Button
+                android:id="@+id/view_settings_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_settings" />
 
-        <Button
-            android:id="@+id/view_dev_settings_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_dev_settings" />
+            <Button
+                android:id="@+id/view_manage_all_applications_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_manage_all_applications" />
 
-        <Button
-            android:id="@+id/view_auto_start_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/view_auto_start" />
+            <Button
+                android:id="@+id/view_manage_applications_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_manage_applications" />
 
-        <Button
-            android:id="@+id/require_root_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/require_root" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/view_dev_settings_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_dev_settings" />
+
+            <Button
+                android:id="@+id/view_notification_listener_settings_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_notification_listener_settings" />
+
+            <Button
+                android:id="@+id/view_auto_start_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/view_auto_start" />
+
+            <Button
+                android:id="@+id/require_root_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/require_root" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
